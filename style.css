@@ -1,0 +1,523 @@
+:root {
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --blue-dark: #0a192f;
+  --blue-medium: #172a45;
+  --blue-light: #64ffda;
+  --text-light: #e6f1ff;
+  --text-dark: #0a192f;
+}
+
+/* Базовые стили */
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  color: var(--text-light);
+  background: var(--blue-dark);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Видеофон */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+/* Шапка - полностью переработанная */
+.main-header {
+  background: rgba(10, 25, 47, 0.95);
+  padding: 10px 5% 10px 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  min-width: 0;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.company-name {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--blue-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.language-selector {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-light);
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--blue-light);
+  cursor: pointer;
+  font-size: 0.95rem;
+  min-width: 65px;
+}
+
+.theme-btn {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-light);
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--blue-light);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  width: 40px;
+  text-align: center;
+}
+
+/* Основное содержимое */
+.content {
+  padding: 100px 5% 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  color: var(--blue-light);
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Карточки услуг */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.service-card {
+  background: rgba(23, 42, 69, 0.7);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid var(--blue-light);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Партнеры и кейсы */
+.partners-section,
+.cases-section {
+  text-align: center;
+}
+
+.partner-card,
+.case-card {
+  background: rgba(23, 42, 69, 0.7);
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  border-left: 4px solid var(--blue-light);
+}
+
+/* Форма обратной связи */
+.contact-form {
+  background: rgba(23, 42, 69, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto 0;
+  border: 1px solid var(--blue-light);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--blue-light);
+  border-radius: 5px;
+  color: white;
+}
+
+.submit-btn {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  padding: 14px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Светлая тема */
+body.light {
+  background: #f8fbff;
+  color: #333;
+}
+
+body.light .main-header {
+  background: rgba(200, 230, 255, 0.95);
+}
+
+body.light .company-name,
+body.light h2 {
+  color: #0077cc;
+}
+
+body.light .service-card,
+body.light .partner-card,
+body.light .case-card,
+body.light .contact-form {
+  background: rgba(200, 230, 255, 0.7);
+  border-left-color: #0077cc;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 3%;
+    flex-wrap: wrap;
+  }
+  
+  .logo-container {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  .controls {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0;
+  }
+  
+  .content {
+    padding-top: 130px;
+  }
+  
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== КРИТИЧНЫЕ ИСПРАВЛЕНИЯ ===== */
+
+/* 1. Исправление шапки */
+.main-header {
+  padding: 10px 3% 10px 5% !important; /* Сдвигаем кнопки левее */
+}
+
+.controls {
+  gap: 5px !important;
+  margin-left: 0 !important;
+}
+
+.theme-btn {
+  width: 36px !important;
+  padding: 5px !important;
+  min-width: unset !important;
+}
+
+/* 2. Центрирование текстов */
+.partner-card,
+.case-card {
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* 3. Fallback для видео */
+.video-container {
+  background: #0a192f;
+}
+#bg-video[error] {
+  display: none;
+}
+/* Исправление шапки */
+.main-header {
+  padding-right: 5% !important; /* Освобождаем место справа */
+}
+
+.controls {
+  margin-left: auto !important; /* Сдвигаем кнопки вправо */
+  gap: 10px !important;
+}
+
+.theme-btn {
+  width: 40px !important; /* Фиксированная ширина */
+  padding: 6px 0 !important; /* Центрируем иконку */
+}
+/* Центрирование подзаголовка */
+.hero-section p {
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 80% !important;
+}
+/* Сдвиг кнопок ВЛЕВО */
+.main-header {
+  justify-content: flex-start !important; /* Прижимаем всё к левому краю */
+}
+
+.controls {
+  margin-left: 20px !important; /* Сдвигаем кнопки от лого */
+  margin-right: auto !important; /* Занимаем оставшееся пространство */
+}
+
+/* Фикс для маленьких экранов */
+@media (max-width: 768px) {
+  .controls {
+    margin-left: 10px !important;
+  }
+}
+/* Точечный сдвиг ТОЛЬКО кнопок влево */
+.main-header {
+  position: relative; /* Для позиционирования */
+}
+
+.controls {
+  position: absolute !important;
+  left: 12cm !important; /* Сдвиг на 3 см от левого края лого */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  gap: 8px !important;
+}
+
+.language-selector {
+  width: 80px !important;
+}
+
+.theme-btn {
+  width: 40px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+/* Точное выравнивание кнопок в шапке */
+.main-header {
+  padding-left: var(--header-padding, 20px);
+  padding-right: var(--header-padding, 20px);
+}
+
+.logo-container {
+  gap: var(--logo-gap, 15px); /* Расстояние лого-название */
+}
+
+.controls {
+  margin-left: auto;
+  display: flex;
+  gap: var(--logo-gap, 15px); /* =расстоянию лого-название */
+}
+
+.language-selector, 
+.theme-btn {
+  width: 60px; /* Фиксированная ширина */
+  height: 34px; /* Фиксированная высота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.language-selector {
+  text-align: center;
+  text-align-last: center;
+}
+/* Финальное исправление шапки */
+.main-header {
+  padding-left: 20px; /* Исходный отступ логотипа */
+  padding-right: 20px; /* Такой же отступ для кнопки темы */
+}
+
+.logo-container {
+  margin-right: auto; /* Логотип остается слева */
+}
+
+.controls {
+  margin-left: auto; /* Кнопки прижимаются вправо */
+  display: flex;
+  gap: 15px; /* Расстояние между кнопками */
+  position: relative;
+  right: 0; /* Фиксация у правого края */
+}
+
+.language-selector, 
+.theme-btn {
+  width: 60px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Фикс шапки */
+.main-header {
+  padding-left: var(--side-padding, 3cm); /* Отступ логотипа */
+  padding-right: var(--side-padding, 3cm); /* Такой же отступ для кнопок */
+}
+
+/* Логотип и название */
+.logo-container {
+  gap: var(--element-gap, 2cm); /* Расстояние лого-название */
+}
+
+/* Кнопки */
+.controls {
+  display: flex;
+  gap: var(--element-gap, 2cm); /* =расстоянию лого-название */
+  margin-left: auto;
+}
+
+/* Единые размеры кнопок */
+.language-selector, 
+.theme-btn {
+  width: 3cm !important;
+  height: 1.5cm !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Центрирование текста в селекторе */
+.language-selector {
+  text-align: center;
+  text-align-last: center;
+  appearance: none;
+}
+/* Жесткая фиксация всех элементов */
+.main-header {
+  padding-left: 3cm; /* Фикс. отступ логотипа слева */
+  padding-right: 3cm; /* Фикс. отступ кнопки справа */
+  display: flex;
+}
+
+/* Логотип и название - без изменений */
+.logo-container {
+  display: flex;
+  gap: 2cm; /* Фикс. расстояние лого-название */
+  margin-right: auto; /* Прижимаем к левому краю */
+}
+
+/* Кнопки строго справа */
+.controls {
+  display: flex;
+  gap: 2cm; /* =расстоянию лого-название */
+  margin-left: 0; /* Убираем авто-отступы */
+}
+
+/* Идентичные кнопки */
+.language-selector, 
+.theme-btn {
+  width: 3cm;
+  height: 1.5cm;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #64ffda;
+  background: rgba(100, 255, 218, 0.1);
+}
+/* Жесткий контроль позиционирования */
+.main-header {
+  display: grid;
+  grid-template-columns: 
+    3cm    /* Левый отступ */
+    auto   /* Лого + название */
+    2cm    /* Промежуток */
+    auto   /* Кнопки */
+    3cm;   /* Правый отступ */
+  align-items: center;
+}
+
+.logo-container {
+  grid-column: 2;
+  display: flex;
+  gap: 2cm; /* Расстояние лого-название */
+}
+
+.controls {
+  grid-column: 4;
+  display: flex;
+  gap: 2cm; /* =расстоянию лого-название */
+}
+
+/* Идентичные кнопки */
+.language-selector, 
+.theme-btn {
+  width: 3cm;
+  height: 1.5cm;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #64ffda;
+  background: rgba(100, 255, 218, 0.1);
+}
+/* Восстановление исходного положения */
+.main-header {
+  padding-left: 0.5cm !important; /* Логотип в 0.5cm от левого края */
+  padding-right: 0.5cm !important; /* Кнопки в 0.5cm от правого края */
+}
+
+.logo-container {
+  gap: 0.5cm !important; /* Расстояние логотип-название */
+  margin-right: auto !important; /* Фиксация у левого края */
+}
+
+.controls {
+  margin-left: auto !important; /* Фиксация у правого края */
+  gap: 0.5cm !important; /* Расстояние между кнопками */
+}
+
+/* Единый размер кнопок */
+.language-selector, 
+.theme-btn {
+  width: 1.5cm !important;
+  height: 1cm !important;
+}

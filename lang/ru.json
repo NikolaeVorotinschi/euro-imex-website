@@ -1,0 +1,18 @@
+{
+  "welcome": "Добро пожаловать в Euro Imex Capital",
+  "slogan": "Ваш щит в цифровом мире",
+  "servicesTitle": "Наши услуги",
+  "penetrationTesting": "Тестирование на проникновение",
+  "securityAudit": "Аудит безопасности",
+  "osintInvestigation": "OSINT-расследования",
+  "phishingSimulation": "Фишинг-симуляция",
+  "securityConsulting": "Консалтинг по безопасности",
+  "incidentResponse": "Реагирование на инциденты",
+  "vulnerabilityManagement": "Управление уязвимостями",
+  "partnersTitle": "Наши партнеры",
+  "partnersText": "Мы сотрудничаем с лидерами отрасли по всей Европе.",
+  "casesTitle": "Кейсы",
+  "casesText": "Скоро мы представим ключевые кейсы из нашей практики.",
+  "contactTitle": "Связаться с нами",
+  "send": "Отправить"
+}

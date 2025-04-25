@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <style>
+    :root {
+      --side-padding: 3cm; /* Отступ от краев */
+      --element-gap: 2cm; /* Расстояние между элементами */
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euro Imex Capital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+</head>
+<body>
+  <!-- Видеофон -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline id="bg-video" 
+       style="opacity: 0.15; object-fit: cover; width: 100%; height: 100%;"
+       onerror="this.style.display='none'">
+  <source src="assets/terminal.mp4" type="video/mp4">
+</video>
+  </div>
+
+  <!-- Шапка -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Euro Imex Capital" class="logo">
+      <h1 class="company-name">Euro Imex Capital</h1>
+    </div>
+    <div class="controls">
+      <select id="language-selector" class="language-selector">
+        <option value="en">EN</option>
+        <option value="sk">SK</option>
+        <option value="ru">RU</option>
+        <option value="ua">UA</option>
+      </select>
+      <button id="theme-toggle" class="theme-btn">☀️</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- Герой -->
+    <section class="hero-section">
+      <h2 data-i18n="welcome">Welcome to Euro Imex Capital</h2>
+      <p data-i18n="slogan">Your shield in the digital world</p>
+    </section>
+
+    <!-- Услуги -->
+    <section class="services-section">
+      <h2 data-i18n="servicesTitle">Our Services</h2>
+      <div class="service-cards">
+        <div class="service-card" data-i18n="penetrationTesting">Penetration Testing</div>
+        <div class="service-card" data-i18n="securityAudit">Security Audit</div>
+        <div class="service-card" data-i18n="osintInvestigation">OSINT Investigation</div>
+        <div class="service-card" data-i18n="phishingSimulation">Phishing Simulation</div>
+        <div class="service-card" data-i18n="securityConsulting">Security Consulting</div>
+        <div class="service-card" data-i18n="incidentResponse">Incident Response</div>
+        <div class="service-card" data-i18n="vulnerabilityManagement">Vulnerability Management</div>
+      </div>
+    </section>
+
+    <!-- Партнеры -->
+    <section class="partners-section">
+      <h2 data-i18n="partnersTitle">Our Partners</h2>
+      <div class="partner-card" data-i18n="partnersText">
+        We collaborate with industry leaders across Europe.
+      </div>
+    </section>
+
+    <!-- Кейсы -->
+    <section class="cases-section">
+      <h2 data-i18n="casesTitle">Case Studies</h2>
+      <div class="case-card" data-i18n="casesText">
+        Soon we will present key cases from our practice.
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact-section">
+      <h2 data-i18n="contactTitle">Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/xdkejodq" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn" data-i18n="send">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
